@@ -1,0 +1,63 @@
+{
+  "name": "moss-card",
+  "version": "0.1.0",
+  "description": "移动端优先的间隔重复闪卡 PWA",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/holynova/flash-card.git"
+  },
+  "homepage": "https://holynova.github.io/flash-card/",
+  "bugs": {
+    "url": "https://github.com/holynova/flash-card/issues"
+  },
+  "keywords": ["flashcards", "spaced-repetition", "fsrs", "pwa"],
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "build:pages": "node scripts/build-pages.mjs",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -b --pretty false",
+    "lint": "eslint .",
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build",
+    "e2e": "playwright test"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.112.3",
+    "@tanstack/react-query": "5.101.4",
+    "date-fns": "4.4.0",
+    "dexie": "4.4.4",
+    "lucide-react": "1.31.0",
+    "papaparse": "5.5.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-router-dom": "7.18.2",
+    "ts-fsrs": "5.4.1",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.62.1",
+    "@testing-library/jest-dom": "7.0.1",
+    "@testing-library/react": "16.3.2",
+    "@testing-library/user-event": "14.6.4",
+    "@types/papaparse": "5.5.2",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.5",
+    "eslint": "10.8.1",
+    "fake-indexeddb": "6.2.5",
+    "globals": "17.11.0",
+    "jsdom": "30.0.1",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.67.0",
+    "vite": "8.2.1",
+    "vite-plugin-pwa": "1.3.0",
+    "vitest": "4.1.10",
+    "workbox-window": "7.4.1"
+  }
+}
