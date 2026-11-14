@@ -47,7 +47,7 @@ export function MePage() {
       <section className="settings-group">
         <p className="eyebrow">同步与安全</p>
         <div className="setting-row"><div className="setting-icon"><Wifi size={20} /></div><div><strong>{navigator.onLine ? '网络已连接' : '当前离线'}</strong><span>{repositoryMode === 'cloud' ? '学习记录自动保存到云端' : '数据只保存在这台设备'}</span></div></div>
-        <div className="setting-row"><div className="setting-icon"><Cloud size={20} /></div><div><strong>{repositoryMode === 'cloud' ? 'Supabase 云同步' : '尚未连接 Supabase'}</strong><span>{repositoryMode === 'cloud' ? '行级权限保护每位用户的数据' : '配置环境变量即可切换云端模式'}</span></div></div>
+        <div className="setting-row"><div className="setting-icon"><Cloud size={20} /></div><div><strong>{repositoryMode === 'cloud' ? '云同步已开启' : '尚未开启云同步'}</strong><span>{repositoryMode === 'cloud' ? '学习记录会自动保存到云端，不会与他人共享' : '开启后可在多台设备上同步学习记录'}</span></div></div>
         <div className="setting-row"><div className="setting-icon"><ShieldCheck size={20} /></div><div><strong>完整备份</strong><span>包含牌组、卡片与复习历史</span></div><button type="button" className="mini-action" onClick={() => exportMutation.mutate()} disabled={exportMutation.isPending}><Download size={18} /> 导出</button></div>
       </section>
 

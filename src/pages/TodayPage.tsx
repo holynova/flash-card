@@ -34,7 +34,7 @@ export function TodayPage() {
           <div><strong>{data.fresh}</strong><span>新卡</span></div>
           <div><strong>{data.completed}</strong><span>已完成</span></div>
         </div>
-        <div className="time-estimate"><Clock3 size={17} /> 预计 {data.estimatedMinutes} 分钟</div>
+        {total > 0 && <div className="time-estimate"><Clock3 size={17} /> 预计 {data.estimatedMinutes} 分钟</div>}
         {total > 0 ? (
           <Link className="button button--primary button--large" to="/study">开始今天的学习 <ArrowRight size={19} /></Link>
         ) : (
