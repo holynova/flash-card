@@ -123,7 +123,11 @@ export function DeckDetailPage() {
         </form>
       )}
       <section className="deck-cta-row">
-        <Link className="button button--primary" to={`/study?deck=${deckId}`}><BookOpen size={18} /> {dueCount > 0 ? `学习 ${dueCount} 张` : '自由复习'}</Link>
+        {dueCount > 0 ? (
+          <Link className="button button--primary" to={`/study?deck=${deckId}`}><BookOpen size={18} /> 学习 {dueCount} 张</Link>
+        ) : (
+          <button type="button" className="button button--secondary" disabled>今日已学完</button>
+        )}
         <Link className="button button--secondary" to={`/import?deck=${deckId}`}><FileUp size={18} /> 导入</Link>
         <button type="button" className="button button--secondary deck-export-button" onClick={() => downloadText(`${deck.data!.name.replace(/[\\/:*?"<>|]/g, '-')}.csv`, toCardsCsv(cards.data!), 'text/csv;charset=utf-8')}><Download size={18} /> 导出</button>
       </section>
@@ -146,7 +150,7 @@ export function DeckDetailPage() {
           <div className="card-list">
             {cards.data!.map((card) => (
               <article className={`card-row${card.isSuspended ? ' card-row--suspended' : ''}`} key={card.id}>
-                <div className="card-row__state" aria-label={card.state === 'new' ? '新卡' : '复习卡'}>{card.state === 'new' ? '新' : card.repetitions}</div>
+                <div className="card-row__state" aria-label={card.state === 'new' ? '新卡' : '复习卡'} title={card.state === 'new' ? '新卡，还没学过' : `已复习 ${card.repetitions} 次`}>{card.state === 'new' ? '新' : card.repetitions}</div>
                 <div className="card-row__copy"><strong>{card.front}</strong><span>{card.back || '背面为空'}</span></div>
                 <div className="card-row__actions">
                   <button type="button" className="mini-icon" onClick={() => { setEditingCardId(card.id); setFront(card.front); setBack(card.back); setFormError(''); setAdding(true); window.scrollTo({ top: 0, behavior: 'smooth' }) }} aria-label="编辑卡片"><Pencil size={17} /></button>

@@ -30,7 +30,7 @@ export function AppShell() {
       <div className="app-content">
         {repositoryMode === 'demo' && (
           <div className="demo-banner" role="status">
-            <CloudOff size={15} /> 本地演示模式，接入 Supabase 后自动启用云同步
+            <CloudOff size={15} /> 数据只保存在这台设备上，未开启云同步
           </div>
         )}
         <main id="main-content"><Outlet /></main>

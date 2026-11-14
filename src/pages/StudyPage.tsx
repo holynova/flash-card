@@ -13,6 +13,7 @@ export function StudyPage() {
   const deckId = params.get('deck') ?? undefined
   const client = useQueryClient()
   const queueQuery = useQuery({ queryKey: ['study-queue', deckId], queryFn: () => repository.getStudyQueue(deckId), staleTime: Infinity })
+  const decksQuery = useQuery({ queryKey: ['decks'], queryFn: () => repository.listDecks() })
   const [queue, setQueue] = useState<Card[]>([])
   const [index, setIndex] = useState(0)
   const [revealed, setRevealed] = useState(false)
@@ -30,7 +31,11 @@ export function StudyPage() {
   }, [])
 
   const card = queue[index]
-  const previews = useMemo(() => card ? previewReview(card) : [], [card])
+  const previews = useMemo(() => {
+    if (!card) return []
+    const retention = decksQuery.data?.find((deck) => deck.id === card.deckId)?.desiredRetention ?? 0.9
+    return previewReview(card, new Date(), retention)
+  }, [card, decksQuery.data])
   const review = useMutation({
     mutationFn: (rating: RatingValue) => repository.submitReview({
       eventId: createId(),
