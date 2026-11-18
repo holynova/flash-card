@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200" height="360" viewBox="0 0 1200 360"
+     role="img" aria-labelledby="title desc">
+  <title id="title">苔卡 Moss Card — 移动端 FSRS 间隔重复闪卡 PWA</title>
+  <desc id="desc">暖象牙纸底标题：苔卡，副标题每天几分钟，记住该记住的；右侧是一张历史闪卡，正面是秦统一六国发生在哪一年，翻开是公元前 221 年，下方是重来、困难、良好、简单四档评分。</desc>
+
+  <rect width="1200" height="360" rx="26" fill="#f4f0e3"/>
+
+  <g id="title-block" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <text x="56" y="62" font-size="19" letter-spacing="3" fill="#4a5a48">间隔重复闪卡 · SPACED REPETITION</text>
+    <text x="56" y="128" font-size="62" font-weight="700" fill="#1e4d38">苔卡</text>
+    <text x="56" y="168" font-size="23" fill="#2b332e">MOSS CARD — 每天几分钟，记住该记住的</text>
+    <text x="56" y="204" font-size="19" fill="#5c665e">FSRS 算法排复习计划，移动端优先，离线可用。</text>
+    <g id="chips" font-size="18" fill="#2b332e" text-anchor="middle">
+      <g><rect x="56" y="238" width="118" height="36" rx="18" fill="#e7e0cd" stroke="#d0c8ac" stroke-width="1.5"/><text x="115" y="262">FSRS 算法</text></g>
+      <g><rect x="186" y="238" width="118" height="36" rx="18" fill="#e7e0cd" stroke="#d0c8ac" stroke-width="1.5"/><text x="245" y="262">离线 PWA</text></g>
+      <g><rect x="316" y="238" width="118" height="36" rx="18" fill="#e7e0cd" stroke="#d0c8ac" stroke-width="1.5"/><text x="375" y="262">CSV 导入</text></g>
+      <g><rect x="446" y="238" width="148" height="36" rx="18" fill="#e7e0cd" stroke="#d0c8ac" stroke-width="1.5"/><text x="520" y="262">Supabase 同步</text></g>
+    </g>
+  </g>
+
+  <g id="card-diagram" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <g id="card-back"><rect x="824" y="36" width="320" height="252" rx="18" fill="#e2dbc4"/></g>
+    <g id="card-front">
+      <rect x="800" y="56" width="320" height="252" rx="18" fill="#fffdf6" stroke="#d8d0b8" stroke-width="1.5"/>
+      <text x="828" y="94" font-size="18" fill="#4a5a48">中国历史节点 · 第 3 张</text>
+      <text x="828" y="140" font-size="25" font-weight="700" fill="#2b332e">秦统一六国发生</text>
+      <text x="828" y="172" font-size="25" font-weight="700" fill="#2b332e">在哪一年？</text>
+      <text x="828" y="210" font-size="18" fill="#2f6b52">↓ 翻开 · 公元前 221 年</text>
+    </g>
+    <g id="ratings" font-size="18" text-anchor="middle">
+      <g><rect x="816" y="248" width="66" height="36" rx="18" fill="#b94a33"/><text x="849" y="272" fill="#ffffff">重来</text></g>
+      <g><rect x="892" y="248" width="66" height="36" rx="18" fill="#c9a227"/><text x="925" y="272" fill="#2b332e">困难</text></g>
+      <g><rect x="968" y="248" width="66" height="36" rx="18" fill="#2f6b52"/><text x="1001" y="272" fill="#ffffff">良好</text></g>
+      <g><rect x="1044" y="248" width="66" height="36" rx="18" fill="#7ba889"/><text x="1077" y="272" fill="#16301f">简单</text></g>
+    </g>
+  </g>
+</svg>
